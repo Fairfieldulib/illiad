@@ -1,0 +1,79 @@
+<div>
+</div>
+</div> <!--row-->
+</div> <!--content-->
+</div> <!--container-->
+
+<div id="footer">
+  <div class="row footer-search">
+    <div class="content-center text-center">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form action="http://fairfield.edu/library/search">
+          <div class="input-group">
+            <input type="search" class="form-control" name="q" placeholder="Search Library Website" required/>
+            <span class="input-group-btn">
+              <button class="btn">Search</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer-fill" class="clear-fix">
+    <div id="footer-main"></div><!-- #footer-main -->
+  </div><!-- #footer-fill -->  
+</div><!-- #footer -->
+<div id="footer-address">
+  <div class="content-center row">
+    <div class="col-sm-3">
+      <a href="http://www.fairfield.edu/">
+        <img id="footer-logo" src="https://www.fairfield.edu/media/website2013/styleassets/images/logo.png" alt="Fairfield University"/>
+      </a>
+    </div>
+    <div class="col-sm-5 text-center">
+      Fairfield University, 1073 North Benson Road, Fairfield, CT 06824
+      <br/>
+      tel: (203) 254-4044
+    </div>
+    <div class="col-sm-4">
+      <p class="social-badges">FIND US ON
+        <a href="http://www.facebook.com/pages/DiMenna-Nyselius-Library-Fairfield-University/48826180710" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/FairfieldULib" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="http://pinterest.com/fairfieldulib/" target="_blank"><i class="fa fa-pinterest"></i></a>
+        <a href="http://instagram.com/fairfieldulib" target="_blank"><i class="fa fa-instagram"></i></a>
+      </p>
+    </div>
+  </div>
+</div>
+            
+<script>
+  //add footer
+  $(document).ready(function() {
+    var footer = '';
+    $('#library-navbar .nav > li').each(function() {
+    var header = $(this).children('a').text();
+    var html = '<ul class="footer-nav"><h2>' + header + '</h2>';
+    var $links = $(this).find('.row a').clone(true);
+    $links.find('span').remove();
+    $links.each(function() {
+      html += '<li>' + this.outerHTML + '</li>';    });
+      html += '</ul>';
+      footer += html;
+    }); 
+    $('#footer-main').prepend(footer);
+    
+    $('.default-table table').addClass('table table-striped');
+  });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18832309-16', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<#INCLUDE filename="include_header.html">
+<#INCLUDE filename="include_menu.html">
+<!-- add confirmation dialog on delete using js by WM 5/10/2013 -->
+<script>
+$(document).ready(function() {
+	$("td:last-child a").css({color: 'red', fontWeight: 'bolder'});
+	$("td:last-child a").click(function() {
+  		var x = confirm("Are you sure you want to delete?");
+  			if (x)
+      			return;
+  			else
+    			return false;
+    	}
+	);
+});
+</script>
+<div id="content-wrap" class="col-sm-8 col-md-9">
+  <div id="content">
+  Articles posted to this page will remain accessible by the requestor for <b>30 days from the date of posting</b>.<br />
+  If, prior to this time, you no longer require the use of an article, you may delete it using the &quot;Delete&quot; link to the right of the article information.</p>
+    <p>In the event that you accidentally delete an article from this web page, you may <a href="<#ACTION action="10" form="65">">undelete</a> articles or e-mail us at <#LOCALINFO name="GeneralEMailAddress"> to have them reset.</p>
+  
+  <div class="default-table">
+    <#TABLE name="ElectronicDelivery" headerText="Electronically Received Articles" column="TransactionNumber:Transaction" column="View" column="Size" column="Title" column="Author" column="Expires" column="Delete">
+    <br />					
+  </div>
+              
+  
+  </div>    
+</div>
+<#INCLUDE filename="include_footer.html">

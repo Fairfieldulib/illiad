@@ -1,0 +1,34 @@
+<#INCLUDE filename="include_header.html">
+    <div id="status" class="alert alert-danger"><#STATUS></div>
+  	<div id="content-wrap">
+      <div id="content">
+        <form action="<#DLL>" method="post" name="Logon" class="f-wrap-1">
+          <input type="hidden" name="ILLiadForm" value="Logon"/>
+          <#FORMSTATE>
+          <p><b>Login with your <a href="http://netid.fairfield.edu" target="_blank">NetID</a> and password</b></p>
+          <div class="well well-lg">
+              <div class="form-group">
+                <label for="username"><b>NetID</b></label>
+                <input id="username" name="Username" type="text" tabindex="1"  class="form-control" required/>
+                <label for="password"><b>Password</b></label>
+                <input id="password" name="Password" type="password" tabindex="2" class="form-control" required/>
+              </div>
+              <input type="hidden" name="SubmitButton" value="Logon to ILLiad"/>
+              <input type="submit" value="Login to ILLiad" style="padding:0.5em 1.5em" tabindex="12" class="btn"/>
+          </div>
+          <div>
+            <a href="http://www.fairfield.edu/library/about/policies/interlibraryfaq/">Interlibrary Loan FAQ</a>
+            <br/>
+            <a href="http://www.fairfield.edu/library/about/policies/documentdeliveryfaq/">Document Delivery FAQ</a>
+          </div>
+        </form>
+        <script>
+          $(document).ready(function() {
+            $('form[name="Logon"]').submit(function() {
+              $('#username').val($('#username').val().replace('@fairfield.edu', '').replace('@student.fairfield.edu',''));
+            });
+          });
+        </script>
+      </div>
+    </div>
+<#INCLUDE filename="include_footer.html">

@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fairfield University - DiMenna-Nyselius Library</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://libcat.fairfield.edu/screens/styles-6-9-15.css" />
+<link rel="stylesheet" type="text/css" media="all" href="https://libcat.fairfield.edu/screens/proxima-font.css">
+<link rel="stylesheet" type="text/css" href="https://libcat.fairfield.edu/screens/redesign-6-9-15.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<style>
+#utility .nav>li>a{padding:5px 15px;}
+#content .form-control{height:34px!important}
+</style>
+
+<link rel="icon" href="https://www.fairfield.edu/media/favicon.png" >
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="header" class="clear-fix">
+          
+          <div id="top-nav-container">
+            <div class="content-center">
+              <h2 class="menu-toggle visually-hidden">Main Navigation</h2>
+              <h1 id="site-title"><a href="http://www.fairfield.edu/">Fairfield University</a></h1>
+              
+		      <ul id="news-cal-nav">
+	<li><a href="http://news.fairfield.edu"><i class="fa fa-bullhorn"></i>News</a></li>
+	<li><a href="http://ems.fairfield.edu/mastercalendar/MasterCalendar.aspx"><i class="fa fa-calendar"></i>Calendar</a></li>
+	<li><a href="http://www.fairfield.edu/library/"><i class="fa fa-book"></i>Library</a></li>
+        <li><a href="http://my.fairfield.edu/"><i class="fa fa-bookmark"></i>my.Fairfield</a></li>
+        <li><a href="http://www.fairfield.edu/lifeatfairfield/artsminds/"><i class="fa fa-music"></i>Arts</a></li>
+        <li class="end"><a href="http://strategicplanning.fairfield.edu"><i class="fa fa-angle-double-right"></i> Fairfield2020</a><button id="toggle-university-nav" aria-haspopup="true" aria-owns="university-nav" aria-controls="university-nav" aria-expaned="false">More <i class="fa fa-caret-down"></i></button></li>
+</ul><!-- navigation object : Display Top Left Quicklinks -->
+              <script>
+                $('.end').append($('#toggle-university-nav'));
+              </script>
+            </div>
+		  </div><!-- #top-nav-container -->
+          
+          <div id="university-nav" aria-expaned="false" aria-labelledby="toggle-university-nav" class="clear-fix">
+			<div id="nav-bar">              
+				<div class="content-center">
+					
+					<div id="about" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/aboutfairfield/">About Fairfield</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/aboutfairfield/universityprofile/">University Profile</a></li><li><a href="http://www.fairfield.edu/aboutfairfield/missionvalueshistory/">Mission, Values, &amp; History</a></li><li><a href="http://www.fairfield.edu/aboutfairfield/officeofthepresident/">Office of the President</a></li><li><a href="http://www.fairfield.edu/aboutfairfield/departmentsadministration/">Departments &amp; Administration</a></li><li><a href="http://www.fairfield.edu/hr/employmentopportunities/">Employment Opportunities</a></li><li><a href="http://www.fairfield.edu/aboutfairfield/fairfieldintheregion/">Fairfield in the Region</a></li><li><a href="http://www.fairfield.edu/lassochannel/about/aboutcontact/">Contact Us</a></li><li><a href="http://www.fairfield.edu/aboutfairfield/searchfairfieldsite/">Search Fairfield Site</a></li></ul><!-- navigation object : Display About Fairfield Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include About Fairfield Sub Menu -->
+					
+					<div id="admissions" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/admissionaid/">Admission &amp; Aid</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/admissionaid/undergraduateadmission/">Undergraduate Admission</a></li><li><a href="http://www.fairfield.edu/admissionaid/graduateadmission/">Graduate Admission</a></li><li><a href="http://www.fairfield.edu/academics/part-timestudies/">Part-Time Studies</a></li><li><a href="http://www.fairfield.edu/admissionaid/financialaidtuition/">Financial Aid &amp; Tuition</a></li><li><a href="http://www.fairfield.edu/academics/undergraduate/majorsminors/">Majors &amp; Minors</a></li></ul><!-- navigation object : Display Admissions & Aid Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include Admissions & Aid Sub Menu -->
+
+					<div id="academics" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/academics/">Academics</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/academics/academiccalendar/">Academic Calendar</a></li><li><a href="http://www.fairfield.edu/academics/undergraduate/">Undergraduate</a></li><li><a href="http://www.fairfield.edu/academics/graduate/">Graduate</a></li><li><a href="http://www.fairfield.edu/academics/part-timestudies/">Part-Time Studies</a></li><li><a href="http://www.fairfield.edu/academics/schoolscollegescenters/">Schools, Colleges, &amp; Centers</a></li><li><a href="http://www.fairfield.edu/academics/certificateprograms/">Certificate Programs</a></li><li><a href="http://www.fairfield.edu/academics/coursecatalogsschedules/">Course Catalogs &amp; Schedules</a></li><li><a href="http://www.fairfield.edu/academics/studyabroad/">Study Abroad</a></li><li><a href="http://www.fairfield.edu/academics/academicresources/">Academic Resources</a></li><li><a href="http://www.fairfield.edu/academics/summerprograms/">Summer Programs</a></li><li><a href="http://www.fairfield.edu/academics/commencement/">Commencement</a></li><li><a href="http://www.fairfield.edu/academics/convocation/">Convocation</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/artsminds/universityfocuswater/">University Theme: 2014-16 Water</a></li></ul><!-- navigation object : Display Academics Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include Academics Sub Menu -->
+
+					<div id="life" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/lifeatfairfield/">Life at Fairfield</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/lifeatfairfield/campuslife/">Campus Life</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/careerplanning/">Career Planning</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/studentservices/">Student Services</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/faithservice/">Faith &amp; Service</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/clubsorganizationsrecreation/">Clubs, Organizations, &amp; Recreation</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/healthsafety/">Health &amp; Safety</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/artsminds/">Arts &amp; Minds</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/artsminds/quickcenterforthearts/">Quick Center for the Arts</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/globalcommunity/">Global Community</a></li><li><a href="http://www.fairfield.edu/lifeatfairfield/artsminds/universityfocuswater/">University Theme: 2014-16 Water</a></li></ul><!-- navigation object : Display Life at Fairfield Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include Life at Fairfield Sub Menu -->
+
+					<div id="support" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/supportfairfield/">Support Fairfield</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/supportfairfield/stagiving/">STAGiving Day</a></li><li><a href="http://www.fairfield.edu/supportfairfield/alumnirelations/">Alumni Relations</a></li><li><a href="http://www.fairfield.edu/supportfairfield/thefairfieldfund/">The Fairfield Fund</a></li><li><a href="http://www.fairfield.edu/supportfairfield/makeagift/">Make a Gift</a></li><li><a href="http://www.fairfield.edu/supportfairfield/athleticsgiving/">Athletics Giving</a></li><li><a href="http://www.fairfield.edu/supportfairfield/plannedgiving/">Planned Giving</a></li><li><a href="http://www.fairfield.edu/supportfairfield/majorgifts/">Major Gifts</a></li><li><a href="http://www.fairfield.edu/supportfairfield/corporaterelations/">Corporate Relations</a></li><li><a href="http://www.fairfield.edu/supportfairfield/foundationrelations/">Foundation Relations</a></li><li><a href="http://www.fairfield.edu/supportfairfield/lookingforward/">Looking Forward</a></li><li><a href="http://www.fairfield.edu/supportfairfield/contactus/">Contact Us</a></li></ul><!-- navigation object : Display Support Fairfield Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include Support Fairfield Sub Menu -->
+
+					<div id="athletics" class="sub-menu">
+<div class="menu-spacer">
+	<h2><a href="http://www.fairfield.edu/athletics/">Athletics</a></h2>
+	<ul><li><a href="http://www.fairfield.edu/athletics/varsitysports/">Varsity Sports</a></li><li><a href="http://www.fairfield.edu/athletics/clubsports/">Club Sports</a></li><li><a href="http://www.fairfield.edu/athletics/intramurals/">Intramurals</a></li><li><a href="http://www.fairfield.edu/athletics/fitnessrecreation/">Fitness &amp; Recreation</a></li><li><a href="http://fairfieldstags.com/" target="_blank">Fairfield Stags</a></li><li><a href="http://www.fairfield.edu/athletics/raffertystadium/">Rafferty Stadium</a></li><li><a href="https://securelb.imodules.com/s/1671/02-alumni/index.aspx?sid=1671&amp;gid=2&amp;pgid=475&amp;cid=1187">Support Fairfield Athletics</a></li></ul><!-- navigation object : Display Athletics Children -->
+</div><!-- .menu-spacer -->
+</div><!-- .sub-menu --><!-- navigation object : Include Athletics Sub Menu -->
+
+					<form action="/aboutfairfield/searchfairfieldsite/" id="search-form">
+    <h2>Search the Website</h2>
+    <input type="text" placeholder="Enter keywords, departments, etc." class="search-field" name="q" id="search" value="">
+    <input type="hidden" name="cx" value="015498946738789627574:tpcsrquvlhg">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input name="siteurl" type="hidden" value="www.fairfield.edu/arts/quickcenterforthearts/seasonschedule/">
+<input name="ref" type="hidden" value="www.fairfield.edu/arts/quickcenterforthearts/events/">
+<input name="ss" type="hidden" value="">
+</form>
+<!-- navigation object : Include Search Box Code -->
+
+				</div><!-- .content-center -->
+                <button aria-label="close" type="button" id="close-university-nav">
+                  <i aria-hidden="true" class="fa fa-2x fa-times-circle"></i>
+                </button>
+			</div><!-- #nav-bar -->
+          </div><!-- university nav -->
+          <div class="content-center">
+            <h1 id="library-title"><a href="http://www.fairfield.edu/library">DiMenna-Nyselius Library</a></h1>
+        <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#library-navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    </div>
+    <div id="library-navbar" role="navigation" class="navbar-collapse collapse no-transition">
+    <ul class="nav navbar-nav">
+      <!-- navigation object : Find --><li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Find</a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <div class="row"><div class="col-xs-6">
+  <div><a href="http://www.fairfield.edu/library/find/articlesbooksmore/">Articles, Books, &amp; More</a></div>
+<div><a href="http://www.fairfield.edu/library/find/booksmedia/">Books &amp; Media <span>Books, ebooks, CDs, DVDs, streaming video, VHS</span> </a></div>
+<div><a href="http://libcat.fairfield.edu/search/r">Course Reserves <span>Find materials for a class</span> </a></div>
+<div><a href="http://librarybestbets.fairfield.edu/az.php">Databases <span>Find by title or subject</span> </a></div>
+<div><a href="http://www.fairfield.edu/library/find/journals/">Journals <span>Find a journal by title or subject</span> </a></div>
+</div><div class="col-xs-6">
+  <h6>Special Collections</h6>
+<div><a href="http://www.fairfield.edu/library/find/curriculumcollection/">Curriculum Collection <span>Resources for education</span> </a></div>
+<div><a href="http://digitalcommons.fairfield.edu/">DigitalCommons@Fairfield <span>Repository of university scholarship</span> </a></div>
+<div><a href="http://librarybestbets.fairfield.edu/fflduhistory">University Archives&nbsp;<span>Yearbooks, newspapers &amp; more from Fairfield's history</span> </a></div>
+<hr>
+<h6>Services</h6>
+<div><a href="https://fairfield.illiad.oclc.org/illiad/logon.html">Request from Other Libraries&nbsp;<span>Interlibrary loan &amp; document delivery</span></a></div>
+</div></div>
+          </li>
+        </ul>
+      </li>
+      <!-- navigation object : Research Help --><li class="dropdown">
+        <a href="#" class="dropdown-toggle research-menu" data-toggle="dropdown">Research Help</a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <div class="row"><div class="col-xs-6">
+  <h6>Research</h6>
+<div><a href="http://librarybestbets.fairfield.edu/researchguides" title="Research Guides">Research Guides</a></div>
+<div><a href="http://librarybestbets.fairfield.edu/courseguides">Course Guides</a></div>
+<div><a href="http://researchtracker.fairfield.edu/">Research Tracker <span>Stay on top of your research</span> </a><a href="http://librarybestbets.fairfield.edu/tutorials">Tutorials</a></div>
+</div><div class="col-xs-6">
+  <div><a href="http://www.fairfield.edu/library/askalibrarian/">Ask a Librarian</a></div>
+<hr>
+<h6>Citing</h6>
+<div><a href="http://librarybestbets.fairfield.edu/citationguides">Citation Guides<span>APA, MLA, Chicago, IEEE</span></a></div>
+<div><a href="http://librarybestbets.fairfield.edu/flow">Flow <span>Citation Manager</span> </a></div>
+<hr>
+<div><a href="http://www.fairfield.edu/library/about/researchprize/">Research Prize<span>Win $1,000 for your research</span></a></div>
+</div></div>
+          </li>
+        </ul>
+      </li>
+      <!-- navigation object : Library Services --><li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Library Services</a>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li>
+            <div class="row"><div class="col-xs-6">
+  <h6>Use the Library</h6>
+<div><a href="http://www.fairfield.edu/library/about/policies/borrowingperiods/">Borrowing Policies</a></div>
+<div><a href="http://www.fairfield.edu/library/services/computerprinterscopiers/">Computers, Printers, &amp; Copiers</a></div>
+<div><a href="https://fairfield.illiad.oclc.org/illiad/logon.html">Interlibrary Loan</a></div>
+<div><a href="http://libcat.fairfield.edu/patroninfo">Renew Online</a></div>
+<div><a href="http://www.fairfield.edu/library/services/reservearoom/">Reserve a Room</a></div>
+<div><a href="http://www.fairfield.edu/library/services/suggestapurchase/">Suggest a Purchase</a></div>
+<div><a href="http://www.fairfield.edu/library/services/technologylending/">Technology Lending</a></div>
+</div><div class="col-xs-6">
+  <h6>For</h6>
+<div><a href="http://www.fairfield.edu/library/services/alumni/">Alumni</a></div>
+<div><a href="http://www.fairfield.edu/library/services/personswithdisabilities/">Persons with Disabilities</a></div>
+<hr>
+<h6>Reference &amp; Instruction</h6>
+<div><a href="http://www.fairfield.edu/library/askalibrarian/">Ask a Librarian<span>Call, e-mail, IM, text, walk-in</span></a></div>
+<div><span><a href="http://www.fairfield.edu/library/services/instruction/">Library Instruction Classes</a></span></div>
+<div><a href="http://www.fairfield.edu/library/services/scheduleresearchappointment/">Schedule an Appointment<span>Need in-depth research assistance?</span></a></div>
+</div></div>
+          </li>
+        </ul>
+      </li>
+      <!-- navigation object : Faculty Resources --><li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Faculty Resources</a>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li>
+            <div class="row"><div class="col-xs-6">
+  <div><a href="http://www.fairfield.edu/library/facultyresources/reserverequest/">Course Reserves <span>Place items on reserve</span> </a></div>
+<div><a href="https://fairfield.illiad.oclc.org/illiad/logon.html">Document Delivery <span>Request print/microform articles</span> </a></div>
+<div><a href="http://www.fairfield.edu/library/facultyresources/facultystafflibrarydeliveryservice/">Delivery Service <span>Library Items delivered to your office</span> </a></div>
+<div><a href="http://www.fairfield.edu/library/services/reservearoom/">Reserve a Room</a></div>
+<div><a href="http://www.fairfield.edu/library/services/instruction/scheduleaclass/">Schedule a Class <span>Setup a library instruction class</span> </a></div>
+<div><a href="http://librarybestbets.fairfield.edu/facstaffworkshops">Workshops</a></div>
+</div><div class="col-xs-6">
+  <div><a href="http://www.fairfield.edu/library/about/staffdirectory/#liaison">Liaison List <span>Find liaison librarian to your department</span> </a></div>
+<div><a href="http://www.fairfield.edu/library/facultyresources/plagiarismresources/">Plagiarism Resources<span>Detection &amp; Deterrence</span></a></div>
+<div><a href="http://librarybestbets.fairfield.edu/facultypublishing">Publishing Guide <span>Information about getting published</span> </a></div>
+<div><a href="http://fairfield.edu/onlinemovies">Streaming Video <span>Stream Videos for your Course</span></a></div>
+<div><a href="http://www.fairfield.edu/library/facultyresources/">More Resources...</a></div>
+</div></div>
+          </li>
+        </ul>
+      </li>
+      <!-- navigation object : About --><li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+        <ul class="dropdown-menu dropdown-menu-right " role="menu">
+          <li>
+            <div class="row"><div class="col-xs-6">
+  <h6>About Us</h6>
+<div><a href="http://www.fairfield.edu/library/about/assessment/">Assessment<span>Measuring the impact of the library</span></a></div>
+<div><a href="http://www.fairfield.edu/library/about/floorplan/">Floor Plan &amp; Facilities</a></div>
+<div><a href="http://www.fairfield.edu/library/about/policies/">Policies</a></div>
+<div><a href="http://www.fairfield.edu/library/about/staffdirectory/">Staff Directory</a></div>
+<hr>
+<div><a href="http://www.fairfield.edu/library/about/contactus/">Contact Us</a></div>
+</div><div class="col-xs-6">
+  <h6>Hours, News, &amp; Exhibits</h6>
+<div><a href="http://librarybestbets.fairfield.edu/exhibits">Exhibits</a></div>
+<div><a href="http://www.fairfield.edu/library/about/lib_hours/">Hours &amp; Calendar</a></div>
+<div><a href="http://www.fairfield.edu/library/about/history/">Library History</a></div>
+<div><a href="http://thednlreport.fairfield.edu/">News &amp; Events</a></div>
+<hr>
+<h6>Visit Us</h6>
+<div><a href="http://www.fairfield.edu/library/about/directionsparking/">Directions &amp; Parking</a></div>
+</div></div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+      </div>
+    </div>
+ </nav>
+            </div><!-- .content-center -->
+		</div>
+    <script>
+$(document).ready(function() {
+  //toggle university menu
+  $('#toggle-university-nav, #top-nav-container .menu-toggle, #close-university-nav').on('click', function(e) {
+    e.preventDefault();
+    $('#university-nav').slideToggle().attr('aria-expaned', function(i, attr) {return attr === 'true' ? 'false' : 'true'});
+    $('#toggle-university-nav').attr('aria-expaned', function(i, attr) {return attr === 'true' ? 'false' : 'true'}).toggleClass('active').find('i').toggleClass('fa-caret-down').toggleClass('fa-caret-up');
+  });
+  
+  //sticky header
+  $(window).scroll(function() {
+    if ($(window).width() <768) {
+      $('#library-navbar').css({'margin-top':'77px'});    
+      return;
+    }    
+    var windowTop = $(window).scrollTop();
+    if (windowTop > 30) {
+      $('#header ~ .content-center, .top-search-bar:not(#search-tabs)').addClass('stickied-content');
+      $('#header').css({top: '-34px', position: 'fixed', height: '82px'});
+      $('#library-title a').css({height: '53px', width: '171px', 'background-size': 'contain'});
+      $('#library-navbar').css({'margin-top':'-5px'});
+    } else {
+      $('.stickied-content').removeClass('stickied-content');
+      $('#header').css({top: 0, position: 'relative', height: '106px'});
+      $('#library-title a').css({height: '75px', width: '245px', 'background-size': 'inherit'});
+      $('#library-navbar').css({'margin-top':'20px'});
+    }
+  });
+  
+  if ($('#logout-link').text() === 'Log Out ') {
+    $('#logout-link').parents('ul').remove();
+  }
+});
+</script>
+<div class="content-center">
+  <div class="pull-left">
+    <div id="lib-breadcrumb">
+      <a title="Library" href="http://www.fairfield.edu/library">Library</a>
+      <a href="illiad.dll?Action=10&Form=10">Interlibrary Loan &amp; Document Delivery</a>
+    </div>
+  </div>
+</div>
+<div id="main-container">
+  <div id="main-content">
+    <div class="row">
+    <ul class="pull-right list-inline">
+      <li><a href="illiad.dll?Action=10&Form=81">Manage Account</a></li>
+      <li><a id="logout-link" href="illiad.dll?Action=99">Log Out </a></li>
+    </ul>
+    <h1>Interlibrary Loan &amp; Document Delivery</h1>
+
+</div>
+  	<div id="content-wrap">
+      <div id="content">
+        <form action="illiad.dll" method="post" name="Logon" class="f-wrap-1">
+          <input type="hidden" name="ILLiadForm" value="Logon"/>
+          <input type="hidden" name="FORMSTATE" value=""/>
+          <p><b>Login with your <a href="http://netid.fairfield.edu" target="_blank">NetID</a> and password</b></p>
+          <div class="well well-lg">
+              <div class="form-group">
+                <label for="username"><b>NetID</b></label>
+                <input id="username" name="Username" type="text" tabindex="1"  class="form-control" required/>
+                <label for="password"><b>Password</b></label>
+                <input id="password" name="Password" type="password" tabindex="2" class="form-control" required/>
+              </div>
+              <input type="hidden" name="SubmitButton" value="Logon to ILLiad"/>
+              <input type="submit" value="Login to ILLiad" style="padding:0.5em 1.5em" tabindex="12" class="btn"/>
+          </div>
+          <div>
+            <a href="http://www.fairfield.edu/library/about/policies/interlibraryfaq/">Interlibrary Loan FAQ</a>
+            <br/>
+            <a href="http://www.fairfield.edu/library/about/policies/documentdeliveryfaq/">Document Delivery FAQ</a>
+          </div>
+        </form>
+        <script>
+          $(document).ready(function() {
+            $('form[name="Logon"]').submit(function() {
+              $('#username').val($('#username').val().replace('@fairfield.edu', '').replace('@student.fairfield.edu',''));
+            });
+          });
+        </script>
+      </div>
+    </div>
+</div> <!--row-->
+</div> <!--content-->
+</div> <!--container-->
+
+<div id="footer">
+  <div class="row footer-search">
+    <div class="content-center text-center">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form action="http://fairfield.edu/library/search">
+          <div class="input-group">
+            <input type="search" class="form-control" name="q" placeholder="Search Library Website" required/>
+            <span class="input-group-btn">
+              <button class="btn">Search</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="footer-fill" class="clear-fix">
+    <div id="footer-main"></div><!-- #footer-main -->
+  </div><!-- #footer-fill -->  
+</div><!-- #footer -->
+<div id="footer-address">
+  <div class="content-center row">
+    <div class="col-sm-3">
+      <a href="http://www.fairfield.edu/">
+        <img id="footer-logo" src="https://www.fairfield.edu/media/website2013/styleassets/images/logo.png" alt="Fairfield University"/>
+      </a>
+    </div>
+    <div class="col-sm-5 text-center">
+      Fairfield University, 1073 North Benson Road, Fairfield, CT 06824
+      <br/>
+      tel: (203) 254-4044
+    </div>
+    <div class="col-sm-4">
+      <p class="social-badges">FIND US ON
+        <a href="http://www.facebook.com/pages/DiMenna-Nyselius-Library-Fairfield-University/48826180710" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="http://twitter.com/FairfieldULib" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="http://pinterest.com/fairfieldulib/" target="_blank"><i class="fa fa-pinterest"></i></a>
+        <a href="http://instagram.com/fairfieldulib" target="_blank"><i class="fa fa-instagram"></i></a>
+      </p>
+    </div>
+  </div>
+</div>
+            
+<script>
+  //add footer
+  $(document).ready(function() {
+    var footer = '';
+    $('#library-navbar .nav > li').each(function() {
+    var header = $(this).children('a').text();
+    var html = '<ul class="footer-nav"><h2>' + header + '</h2>';
+    var $links = $(this).find('.row a').clone(true);
+    $links.find('span').remove();
+    $links.each(function() {
+      html += '<li>' + this.outerHTML + '</li>';    });
+      html += '</ul>';
+      footer += html;
+    }); 
+    $('#footer-main').prepend(footer);
+    
+    $('.default-table table').addClass('table table-striped');
+  });
+</script>
+</body>
+</html>
+
+

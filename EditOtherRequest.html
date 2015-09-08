@@ -1,0 +1,76 @@
+<#INCLUDE filename="include_header.html">
+<#INCLUDE filename="include_menu.html">
+    <div id="content-wrap" class="col-sm-8 col-md-9">
+    <div id="content">
+		<form action="illiad.dll" method="post" name="OtherRequest" class="form-horizontal">
+			<input type="hidden" name="ILLiadForm" value="OtherRequest">
+			<input type="hidden" name="RequestType" value="Loan">
+			<input type="hidden" name="Username" value="<#PARAM name="Username">">
+			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+				<fieldset>			
+					<h2>Edit Other Request</h2>
+					<#STATUS>
+          <div>All fields with <span class="req">*</span> must be filled</div>
+					<h3>Describe the item you want</h3>
+          
+          <div class="form-group">
+            <label for="Other" class="col-sm-4 control-label"><span class="<#ERROR name="ERROROther">"><span class="req">*</span><b>Citation</b></span></label>
+            <textarea class="col-sm-8" id="Other" name="Other" rows="6" cols="40" class="f-name" tabindex="2" required><#PARAM name="Other"></textarea>
+            <div class="col-sm-8 col-sm-offset-4">Please give as full and accurate a title as possible.</div>
+          </div>
+			
+					<hr/>
+          
+          <div class="form-group">
+              <label for="NotWantedAfter" class="col-sm-4 text-right"><span class="<#ERROR name="ERRORNotWantedAfter">"><span class="req">*</span><b>Not Wanted After Date</b></span></label>
+              <input class="col-sm-8" id="NotWantedAfter" class="form-control" name="NotWantedAfter" type="text" tabindex="4" required value="<#PARAM name="NotWantedAfter">">
+          </div>
+
+					<div class="form-group">
+              <label for="AcceptNonEnglish" class="col-sm-4 text-right"><span class="<#ERROR name="ERRORAcceptNonEnglish">"><b>Language Other Than English?</b></span>
+              <br/>
+              <span>Specify acceptable languages in the notes field.</span>
+              </label>
+              <select id="AcceptNonEnglish" name="AcceptNonEnglish" size="1" class="f-name" tabindex="12">
+                <option selected><#PARAM name="AcceptNonEnglish"></option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+          </div>
+          
+          <div class="form-group">
+              <label for="AcceptAlternateEdition" class="col-sm-4 text-right"><span class="<#ERROR name="ERRORAcceptAlternateEdition">"><b>Will you accept an alternate edition of this item?</b></span>
+              </label>
+              <select id="AcceptAlternateEdition" name="AcceptAlternateEdition" size="1" class="f-name" tabindex="12">
+                <option selected><#PARAM name="AcceptAlternateEdition"></option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+          </div>
+          
+          <hr/>
+
+					<div class="form-group">
+            <label for="Notes" class="col-sm-12"><span class="<#ERROR name="ERRORNotes">"><b>Notes</b></span>
+            <br/>
+            <span>Put any information here that may help us find the item, as well as any other pertinent information.</span>
+            </label>
+            <textarea class="col-sm-12 id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="13"><#PARAM name="Notes"></textarea>
+          </div>
+            
+          <div class="form-group">
+            <label for="CitedIn" class="col-sm-12"><span class="<#ERROR name="ERRORCitedIn">"><b>Where did you find this item cited?</b></span>
+            <br/>
+            <span>Examples are Academic OneFile&reg;, CINAHL&reg;, PsycINFO&reg;, or a specific journal or book.</span>
+            </label>
+            <textarea class="col-sm-12" id="CitedIn" name="CitedIn" rows="2" cols="40" class="f-name" tabindex="13"><#PARAM name="CitedIn"></textarea>
+          </div>
+
+          <center>
+            <input type="submit" name="SubmitButton" value="Submit Request" class="btn" tabindex="60">
+          </center>
+        </form>
+      </div>
+    </div>
+<#INCLUDE filename="include_footer.html">
+

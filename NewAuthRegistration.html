@@ -1,0 +1,153 @@
+<#INCLUDE filename="include_header.html">
+<#INCLUDE filename="include_menu.html">
+  <div id="content-wrap" class="col-sm-8 col-md-9">
+    <div id="content">
+		<form action="illiad.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
+			<input type="hidden" name="ILLiadForm" value="NewAuthRegistration">
+      <input type='hidden' name='NotifyGroup' value='E-Mail'>
+      <input type='hidden' name='DeliveryGroup' value='Mail to Address'>
+      <input type='hidden' name='LoanDeliveryGroup' value='Hold for Pickup'>
+      <input type='hidden' name='WebDeliveryGroup' value='Yes'>
+      <input type='hidden' name='NVTGC' value='ILL'>
+      
+      <input id="SSN" class="form-control" name="SSN" type="hidden" value="<#PARAM name="Username">">
+       <h2>New User Registration</h2>
+       <#FORMSTATE>
+       <div id="status" class="alert alert-danger" style="display:none"><#STATUS></div>
+       <script>
+         if ($('#status').text().indexOf('When finished') === -1) {
+           $('#status').show();
+         }
+         if ($('#status').text().indexOf('Complete your registration') !== -1) {
+          $('#status').removeClass('alert-danger').addClass('alert-info');
+         }
+       </script>
+          
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="FirstName"><span class="req">*</span> <span class="<#ERROR name="ERRORFirstName">"><b>First Name</b></span></label>
+                <input id="FirstName" class="form-control" name="FirstName" type="text" tabindex="1" required value="<#PARAM name="FirstName">">
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="LastName"><span class="req">*</span> <span class="<#ERROR name="ERRORLastName">"><b>Last Name</b></span></label>
+                <input id="LastName" class="form-control" name="LastName" type="text" tabindex="2" required value="<#PARAM name="LastName">">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="EMailAddress"><span class="req">*</span> <span class="<#ERROR name="ERROREMailAddress">"><b>E-mail</b></span></label>
+                <input id="EMailAddress" class="form-control" name="EMailAddress" type="text" tabindex="3" required value="<#PARAM name="EMailAddress">">
+                <div class="input-details">All notifications will be sent here</div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="Phone"><span class="req">*</span> <span class="<#ERROR name="ERRORPhone">"><b>Phone</b></span></label>
+                <input id="Phone" class="form-control" name="Phone" type="text" tabindex="4" required value="<#PARAM name="Phone">">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="StatusGroup"><span class="req">*</span> <span class="<#ERROR name="ERRORStatus">"><b>Status</b></span></label>
+                <select id="StatusGroup" name="StatusGroup" size="1" class="f-name" tabindex="5" required>
+                  <option selected><#PARAM name=StatusGroup></option>
+                  <option>Undergraduate</option>
+                  <option>Graduate</option>
+                  <option>Faculty</option>
+                  <option>Doctorate</option>
+                  <option>Staff</option>
+                  <option>Non-credit / Certificate program</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+			    		  <label for="Department"><span class="req">*</span> <span class="<#ERROR name="ERRORDepartment">"><b>Department/Major</b></span></label>
+                <select id="Department" name="Department" size="1" class="f-name" tabindex="6" required>
+                  <#OPTION name="custom" groupname="Department" selectedValue="<#PARAM name=Department>"defaultValue="NONE" defaultName=""/>
+                </select>
+              </div>
+            </div>
+          </div>
+
+				<div class="row">
+          <input type="submit" class="btn btn-lg" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="60" />
+        </div>
+		</form>
+
+    </div>
+  </div>
+  <script src="//libcat.fairfield.edu/screens/chosen.jquery.min.js"></script>
+  <script>
+  var cssId = 'chosen-css';  // you could encode the css path itself to generate id..
+  if (!document.getElementById(cssId))
+  {
+      var head  = document.getElementsByTagName('head')[0];
+      var link  = document.createElement('link');
+      link.id   = cssId;
+      link.rel  = 'stylesheet';
+      link.type = 'text/css';
+      link.href = '//libcat.fairfield.edu/screens/chosen.min.css';
+      link.media = 'all';
+      head.appendChild(link);
+  }
+  
+  $(document).ready(function() {
+    var choices = {
+      Undergraduate: ['Accounting','American Studies','Art History','Biology','Business Undecided','Chemistry - Biochemistry ','Communication','Digital Journalism','Economics','Education','Engineering','Engineering-Computer or Software','Engineering - Electrical','Engineering-Mechanical','English','Environmental Studies','Film',' Television and Media Arts ','Finance','History','Individually Designed Major','Info Systems - Operations Mgmt','International Business','International Studies','Liberal Studies','Management','Marketing','Mathematics','Modern Languages & Literature','Music','Nursing','Other','Philosophy','Physics','Politics','Psychology','Public Relations','Religious Studies','Sociology & Anthropology','Studio Art','Theatre','Undecided'],
+      Graduate: ['Accounting','American Studies','Art History','Business Analytics','Communication','Counseling - Psychology Related GSEAP','Creative Writing','Education Related GSEAP','Engineering','Engineering - Electrical and Computer','Engineering - Computer or Software','Engineering - Mechanical','Finance','Management of Technology','Master of Business Administration (MBA)','Nursing','Nursing - Family Practitioner','Nursing - Leadership','Nursing - Psychiatric Practitioner','Other','Public Administration (MPA)'],
+      Doctorate: ['Nursing','Nursing - Family Practitioner','Nursing - Anesthesia','Nursing - Practice','Nursing - Psychiatric Practitioner'],
+      Faculty: ['Accounting','American Studies','Applied Ethics','Art History','Asian Studies ','Biology','Black Studies','Business Analytics','Chemistry - Biochemistry ','Classical Studies','Communication','Counseling - Psychology Related GSEAP','Creative Writing','Digital Journalism','Economics','Education','Engineering','English','Environmental Studies','Film',' Television and Media Arts ','Finance','Health Studies','History','Info Systems - Operations Mgmt','International Business','International Studies','Management','Management of Technology','Marketing','Master of Business Administration (MBA)','Mathematics','Modern Languages & Literature','Music','Nursing','Other','Philosophy','Physics','Politics','Psychology','Public Administration (MPA)','Public Relations','Religious Studies','Sociology & Anthropology','Studio Art','Theatre'],
+      Staff: ['Administrative','Library','Other','Paraprofessional - Service - Technical'],
+      'Non-credit / Certificate program': ['Certificate Program - Business','Certificate Program - Education or Counseling','Certificate Program - Engineering','Certificate Program - Other','Other']
+    };
+    $('#StatusGroup').change(function(e) {
+      var status = e.currentTarget.value;
+      var selected = $('#Department').val();
+      if (status === '') {
+        return;
+      }
+      $('#Department option').show().each(function() {
+        if (choices[status].indexOf(this.value) === -1) {
+          $(this).hide();
+        }
+      });
+      if (choices[status].indexOf(selected) === -1) {
+        $('#Department').val('').trigger("chosen:updated");
+      } else {
+        $('#Department').trigger("chosen:updated");
+      }
+    });
+    
+    $('#Department').chosen().css({
+      display:'block',
+      width:'0',
+      height:'0',
+      position:'absolute',
+      border: '0!important',
+      outline: 'none',
+      borderColor: 'transparent'
+    }).on('chosen:showing_dropdown', function() {
+      $('.active-result').each(function() {
+        if ($(this).css('display') === 'inline') {
+          $(this).css('display', 'block');
+        }
+      });
+    });
+    $('#Department')[0].style["box-shadow"] = 'none';
+    if ($('#Department option[selected]').length === 0) {
+      $('#Department').val('');
+    }
+    $('#StatusGroup').trigger('change');
+  });
+  </script>
+<#INCLUDE filename="include_footer.html">

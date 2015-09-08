@@ -1,0 +1,182 @@
+<#INCLUDE filename="include_header.html">
+<#INCLUDE filename="include_menu.html">
+    <div id="content-wrap" class="col-sm-8 col-md-9">
+    <div id="content">
+		<form action="illiad.dll" method="post" name="BookChapterRequest" class="form-horizontal">
+			<input type="hidden" name="ILLiadForm" value="BookChapterRequest">
+			<input type="hidden" name="Username" value="<#PARAM name="Username">">
+			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+      
+        <h2>Book Chapter Request</h2>
+        <#STATUS>
+        <div>All fields with <span class="req">*</span> must be filled</div>
+        <h3>Describe the item you want</h3>
+        
+        <div class="form-group">
+          <label for="ISSN" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORISSN">"><b>ISBN or OCLC Number</b></span></label>
+          <input class="col-sm-6" id="ISSN" class="form-control" name="ISSN" type="text" tabindex="4" value="<#PARAM name="ISSN">">
+          <div class="col-sm-2"><button type="button" class="btn" id="isbn-lookup">Get Info</button><span style="display:none;margin-left:5px;" class="fa fa-spinner fa-spin"></span></div>
+          <div class="col-sm-8 col-sm-offset-2"><strong>If used, some book information will be automatically added</strong></div>
+          <div class="col-sm-4 col-sm-offset-3 text-center" id="lookup-info"></div>
+        </div>
+        
+        <hr/>
+
+        <div class="form-group">
+          <label for="PhotoJournalTitle" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoJournalTitle">"><span class="req">*</span><b>Title</b></span></label>
+          <textarea class="col-sm-8" id="PhotoJournalTitle" name="PhotoJournalTitle" rows="2" cols="40" class="f-name" tabindex="2" required><#PARAM name="PhotoJournalTitle"></textarea>
+          <div class="col-sm-8 col-sm-offset-4">Please give as full and accurate a title as possible.</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="PhotoArticleTitle" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoArticleTitle">"><span class="req">*</span><b>Chapter Title</b></span></label>
+            <textarea class="col-sm-8" id="PhotoArticleTitle" name="PhotoArticleTitle" rows="2" cols="40" class="f-name" tabindex="3" required><#PARAM name="PhotoArticleTitle"></textarea>
+            <div class="col-sm-2 col-sm-offset-5"><strong>AND/OR</strong></div>
+          </div>
+        
+        <div class="form-group">
+          <label for="PhotoJournalInclusivePages" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoJournalInclusivePages">"><span class="req">*</span><b>Page Range</b></span></label>
+          <input class="col-sm-8" id="PhotoJournalInclusivePages" class="form-control" name="PhotoJournalInclusivePages" type="text" tabindex="4" required value="<#PARAM name="PhotoJournalInclusivePages">">
+        </div>
+        
+        <hr/>
+
+        <div class="form-group">
+          <label for="PhotoItemAuthor" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoItemAuthor">"><b>Author/Editors</b></span></label>
+          <input class="col-sm-8" id="PhotoItemAuthor" class="form-control" name="PhotoItemAuthor" type="text" tabindex="4" value="<#PARAM name="PhotoItemAuthor">">
+        </div>
+        
+        <div class="form-group">
+          <label for="PhotoArticleAuthor" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoArticleAuthor">"><b>Chapter Author</b></span></label>
+          <input class="col-sm-8" id="PhotoArticleAuthor" class="form-control" name="PhotoArticleAuthor" type="text" tabindex="4" value="<#PARAM name="PhotoArticleAuthor">">
+        </div>
+        
+        <div class="form-group">
+          <label for="PhotoItemPublisher" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoItemPublisher">"><b>Publisher</b></span></label>
+          <input class="col-sm-8" id="PhotoItemPublisher" name="PhotoItemPublisher" type="text" class="f-name" tabindex="2"><#PARAM name="PhotoItemPublisher"/>
+        </div>
+        
+        <div class="form-group">
+          <label for="PhotoItemPlace" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoItemPlace">"><b>Place of Publication</b></span></label>
+          <input class="col-sm-8" id="PhotoItemPlace" name="PhotoItemPlace" type="text" class="f-name" tabindex="2"><#PARAM name="PhotoItemPlace"/>
+        </div>
+        
+        <div class="form-group">
+          <label for="PhotoJournalYear" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoJournalYear">"><b>Date</b></span></label>
+          <input class="col-sm-8" id="PhotoJournalYear" name="PhotoJournalYear" type="text" class="f-name" tabindex="2"><#PARAM name="PhotoJournalYear"/>
+        </div>
+        
+        <div class="form-group">
+          <label for="PhotoItemEdition" class="col-sm-4 control-label"><span class="<#ERROR name="ERRORPhotoItemEdition">"><b>Edition</b></span></label>
+          <input class="col-sm-8" id="PhotoItemEdition" name="PhotoItemEdition" type="text" class="f-name" tabindex="2"><#PARAM name="PhotoItemEdition"/>
+        </div>
+
+        <hr/>
+        
+        <div class="form-group">
+            <label for="NotWantedAfter" class="col-sm-4 text-right"><span class="<#ERROR name="ERRORNotWantedAfter">"><span class="req">*</span><b>Not Wanted After Date</b></span></label>
+            <input class="col-sm-8" id="NotWantedAfter" class="form-control" name="NotWantedAfter" type="text" tabindex="4" required value="<#PARAM name="NotWantedAfter">">
+        </div>
+        
+        <div class="form-group">
+            <label for="AcceptNonEnglish" class="col-sm-4 text-right"><span class="<#ERROR name="ERRORAcceptNonEnglish">"><b>Language Other Than English?</b></span>
+            <br/>
+            <span>Specify acceptable languages in the notes field.</span>
+            </label>
+            <select id="AcceptNonEnglish" name="AcceptNonEnglish" size="1" class="f-name" tabindex="12">
+              <option selected><#PARAM name="AcceptNonEnglish"></option>
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+        </div>
+          
+        <hr/>
+        
+        <div class="form-group">
+          <label for="Notes" class="col-sm-12"><span class="<#ERROR name="ERRORNotes">"><b>Notes</b></span>
+          <br/>
+          <span>Put any information here that may help us find the item, as well as any other pertinent information.</span>
+          </label>
+          <textarea class="col-sm-12 id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="13"><#PARAM name="Notes"></textarea>
+        </div>
+          
+        <div class="form-group">
+          <label for="CitedIn" class="col-sm-12"><span class="<#ERROR name="ERRORCitedIn">"><b>Where did you find this item cited?</b></span>
+          <br/>
+          <span>Examples are Academic OneFile&reg;, CINAHL&reg;, PsycINFO&reg;, or a specific journal or book.</span>
+          </label>
+          <textarea class="col-sm-12" id="CitedIn" name="CitedIn" rows="2" cols="40" class="f-name" tabindex="13"><#PARAM name="CitedIn"></textarea>
+        </div>
+        
+        <center>
+          <input type="submit" name="SubmitButton" value="Submit Request" class="btn" tabindex="60">
+        </center>
+      </form>
+		
+    </div>    
+  </div>
+  
+      <script>
+      $(document).ready(function() {
+        $('#NotWantedAfter').datepicker();
+      
+        $('#isbn-lookup').click(function(e) {
+          $('#lookup-info').hide();
+          var $button = $(e.currentTarget);
+          var number = $('#ISSN').val().replace(/-/g,'').trim();
+          $('#ISSN').val(number);
+          if (number === '') {
+            return false;
+          }
+          $button.next('span').show();
+          var query = 'isbn:';
+          if (number.length !== 10 && number.length !== 13) {
+            query = 'oclc:';
+            $('#ISSN').attr('name', 'ESPNumber');
+          } else {
+            $('#ISSN').attr('name', 'ISSN');
+          }
+          query += number;
+          $.ajax({
+            url: 'https://www.googleapis.com/books/v1/volumes',
+            data: {
+              maxResults: '1',
+              printType: 'books',
+              q: query
+            },
+            success: function(data) {
+              $button.next('span').hide();
+              if (data.totalItems === 0) {
+                $('#lookup-info').text('Could not find book information').addClass('alert alert-info').show();
+                return;
+              }
+              var info = data.items[0].volumeInfo;
+              $('#PhotoJournalTitle').val(info.title);
+              $('#PhotoItemAuthor').val(info.authors.join('; '));
+              $('#PhotoItemPublisher').val(info.publisher);
+              $('#PhotoJournalYear').val(info.publishedDate);
+            }
+          });
+        });
+        
+        $('#PhotoArticleTitle').change(function(e) {
+          var val = $(e.currentTarget).val();
+          if (val !== '') {
+            $('#PhotoJournalInclusivePages').removeAttr('required');
+          } else {
+            $('#PhotoJournalInclusivePages').attr('required', 'required');
+          }
+        });
+        
+        $('#PhotoJournalInclusivePages').change(function(e) {
+          var val = $(e.currentTarget).val();
+          if (val !== '') {
+            $('#PhotoArticleTitle').removeAttr('required');
+          } else {
+            $('#PhotoArticleTitle').attr('required', 'required');
+          }
+        });
+        
+      });
+    </script>
+<#INCLUDE filename="include_footer.html">
