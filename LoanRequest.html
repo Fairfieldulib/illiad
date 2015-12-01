@@ -108,7 +108,7 @@
       <script>
       $(document).ready(function() {
         $('#isbn-lookup').click(function(e) {
-          ga('send', 'event', 'lookup', 'click', 'DOI');
+          ga('send', 'event', 'lookup', 'click', 'Book-lookup');
           $('#lookup-info').hide();
           var $button = $(e.currentTarget);
           var number = $('#ISSN').val().replace(/-/g,'').trim();
@@ -125,6 +125,7 @@
             $('#ISSN').attr('name', 'ISSN');
           }
           query += number;
+          try {
           $.ajax({
             url: 'https://www.googleapis.com/books/v1/volumes',
             data: {
@@ -143,8 +144,16 @@
               $('#LoanAuthor').val(info.authors.join('; '));
               $('#LoanPublisher').val(info.publisher);
               $('#LoanDate').val(info.publishedDate);
+            },
+            error: function() {
+              $button.next('span').hide();
+              $('#lookup-info').text('Could not find book information').addClass('alert alert-info').show();
             }
           });
+          } catch (e) {
+            $button.next('span').hide();
+            $('#lookup-info').text('Could not find book information').addClass('alert alert-info').show();
+          }
         });
         
         $('#NotWantedAfter').datepicker();

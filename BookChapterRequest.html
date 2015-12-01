@@ -137,6 +137,7 @@
             $('#ISSN').attr('name', 'ISSN');
           }
           query += number;
+          try {
           $.ajax({
             url: 'https://www.googleapis.com/books/v1/volumes',
             data: {
@@ -155,8 +156,16 @@
               $('#PhotoItemAuthor').val(info.authors.join('; '));
               $('#PhotoItemPublisher').val(info.publisher);
               $('#PhotoJournalYear').val(info.publishedDate);
+            },
+            error: function() {
+              $button.next('span').hide();
+              $('#lookup-info').text('Could not find book information').addClass('alert alert-info').show();
             }
           });
+          } catch (e) {
+            $button.next('span').hide();
+            $('#lookup-info').text('Could not find book information').addClass('alert alert-info').show();
+          }
         });
         
         $('#PhotoArticleTitle').change(function(e) {

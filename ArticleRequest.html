@@ -159,8 +159,9 @@
           return false;
         }
         $button.next('span').show();
+        try{
         $.ajax({
-          url: '//library2.fairfield.edu/api/doi.php',
+          url: 'https://libraryapps.fairfield.edu/openurl/doi.php',
           data: {q:doi},
           success: function (data) {
             $button.next('span').hide();
@@ -169,6 +170,7 @@
               return;
             }
             if (data.links.length > 0) {
+              ga('send', 'event', 'lookup', 'found', doi);
               modal({article: data.links, journal: []});
             }
             $('#PhotoArticleAuthor').val(data.author);
@@ -179,8 +181,16 @@
             $('#ISSN').val(data.issn);
             $('#PhotoJournalTitle').val(data.journal);
             $('#PhotoJournalInclusivePages').val(data.spage);
+          },
+          error: function() {
+            $button.next('span').hide();
+            $('#lookup-info').text('Could not find article information').addClass('alert alert-info').show();
           }
         });
+        } catch (e)  {
+          $button.next('span').hide();
+          $('#lookup-info').text('Could not find article information').addClass('alert alert-info').show();
+        }
       });
       
       
@@ -198,16 +208,22 @@
           volume: $('#PhotoJournalVolume').val(),
           issue: $('#PhotoJournalIssue').val()
         }
-        $.ajax({
-          url: '//library2.fairfield.edu/api/openurl.php',
-          data: data
-        }).done(function(data) {
-          if (data.article.length === 0 && data.journal.length === 0) {
+        try {
+          $.ajax({
+            url: 'https://libraryapps.fairfield.edu/openurl/openurl.php',
+            data: data
+          }).done(function(data) {
+            if (data.article.length === 0 && data.journal.length === 0) {
+              form.submit();
+            } else {
+              modal(data);
+            }
+          }).error(function() {
             form.submit();
-          } else {
-            modal(data);
-          }
-        });
+          });
+        } catch (e) {
+          form.submit();
+        }
         e.preventDefault();
       });
       
