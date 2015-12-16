@@ -33,6 +33,10 @@ $(document).ready(function() {
     			return false;
     	}
 	);
+  
+  if (window.location.href.indexOf('Form') > -1 && window.location.href.indexOf('Form=10') === -1) {
+    $('#content').prepend('<div class="alert alert-danger"><h2>There is a problem with your account.</h2>Please look at your notifications and contact the Interlibrary Loan Office: (203) 254-4000 ext. 2135 or email <a href="mailto:ils@fairfield.edu">ils@fairfield.edu</a>.');
+  }
 });
 </script>
 
